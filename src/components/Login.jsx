@@ -1,14 +1,4 @@
-import { useState } from "react";
-
-const Login = () => {
-    const initialUserDetails = {
-        firstname: "",
-        lastname: "",
-        age: 0,
-    };
-
-    const [userDetails, setUserDetails] = useState(initialUserDetails);
-
+const Login = ({ userDetails, setUserDetails }) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
 
