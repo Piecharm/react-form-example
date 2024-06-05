@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import "./App.css";
 import Login from "./components/Login";
 import Table from "./components/Table";
@@ -10,11 +12,24 @@ function App() {
         age: 0,
     };
     const [userDetails, setUserDetails] = useState(initialUserDetails);
-
     return (
         <>
-            <Login userDetails={userDetails} setUserDetails={setUserDetails} />
-            <Table userDetails={userDetails} />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                    path="/login"
+                    element={
+                        <Login
+                            userDetails={userDetails}
+                            setUserDetails={setUserDetails}
+                        />
+                    }
+                />
+                <Route
+                    path="/table"
+                    element={<Table userDetails={userDetails} />}
+                />
+            </Routes>
         </>
     );
 }
