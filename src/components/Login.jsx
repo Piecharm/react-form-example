@@ -52,6 +52,19 @@ const Login = ({ userDetails, setUserDetails }) => {
                         className="border p-2"
                     />
                 </div>
+                <div className="flex flex-col py-2">
+                    <label> Gender: </label>
+                    <div className="border p-2">
+                        <input type="radio" name="gender" />
+                        <span className="inline-flex items-center ml-2">
+                            Male
+                        </span>
+                        <input type="radio" className="ml-6" name="gender" />
+                        <span className="inline-flex items-center ml-2">
+                            Female
+                        </span>
+                    </div>
+                </div>
                 <button
                     className="border w-full my-5 py-2 bg-teal-900 hover:bg-teal-700 text-white font-bold"
                     type="submit"
