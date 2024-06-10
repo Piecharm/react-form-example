@@ -1,4 +1,4 @@
-const Login = ({ userDetails, setUserDetails }) => {
+const Login = ({ userDetails, setUserDetails, initialUserDetails }) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -11,6 +11,10 @@ const Login = ({ userDetails, setUserDetails }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(userDetails);
+    };
+
+    const handleReset = () => {
+        setUserDetails(initialUserDetails);
     };
 
     return (
@@ -55,22 +59,64 @@ const Login = ({ userDetails, setUserDetails }) => {
                 <div className="flex flex-col py-2">
                     <label> Gender: </label>
                     <div className="border p-2">
-                        <input type="radio" name="gender" />
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="male"
+                            id="male"
+                            checked={userDetails.gender === "male"}
+                            onChange={handleChange}
+                        />
                         <span className="inline-flex items-center ml-2">
                             Male
                         </span>
-                        <input type="radio" className="ml-6" name="gender" />
+                        <input
+                            type="radio"
+                            className="ml-6"
+                            name="gender"
+                            value="female"
+                            id="female"
+                            checked={userDetails.gender === "female"}
+                            onChange={handleChange}
+                        />
                         <span className="inline-flex items-center ml-2">
                             Female
                         </span>
                     </div>
                 </div>
-                <button
-                    className="border w-full my-5 py-2 bg-teal-900 hover:bg-teal-700 text-white font-bold"
-                    type="submit"
-                >
-                    Submit
-                </button>
+                <div className="flex flex-col py-2">
+                    <label htmlFor="countries" className="block">
+                        Country:
+                    </label>
+                    <select
+                        id="countries"
+                        className="border p-2 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full"
+                        value={userDetails.country}
+                        onChange={handleChange}
+                        name="country"
+                    >
+                        <option value="">Choose a Country</option>
+                        <option value="India">India</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Singapore">Singapore</option>
+                    </select>
+                </div>
+                <div className="flex justify-between py-2">
+                    <button
+                        className="border w-full my-3 mx-3 py-2 bg-teal-900 hover:bg-teal-700 text-white font-bold"
+                        type="submit"
+                    >
+                        Submit
+                    </button>
+                    <button
+                        className="border w-full my-3 mx-3 py-2 bg-teal-900 hover:bg-teal-700 text-white font-bold"
+                        onClick={handleReset}
+                    >
+                        Reset
+                    </button>
+                </div>
             </form>
         </div>
     );

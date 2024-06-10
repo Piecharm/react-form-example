@@ -10,8 +10,11 @@ function App() {
         firstname: "",
         lastname: "",
         age: 0,
+        gender: "",
+        country: "",
     };
     const [userDetails, setUserDetails] = useState(initialUserDetails);
+
     return (
         <>
             <Navbar />
@@ -23,6 +26,7 @@ function App() {
                         <Login
                             userDetails={userDetails}
                             setUserDetails={setUserDetails}
+                            initialUserDetails={initialUserDetails}
                         />
                     }
                 />

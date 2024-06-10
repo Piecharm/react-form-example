@@ -13,6 +13,12 @@ const Table = ({ userDetails }) => {
                         <th scope="col" className="px-6 py-3">
                             Age
                         </th>
+                        <th scope="col" className="px-6 py-3">
+                            Gender
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Country
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +26,8 @@ const Table = ({ userDetails }) => {
                         <td className="px-6 py-4">{userDetails.firstname}</td>
                         <td className="px-6 py-4">{userDetails.lastname}</td>
                         <td className="px-6 py-4">{userDetails.age}</td>
+                        <td className="px-6 py-4">{userDetails.gender}</td>
+                        <td className="px-6 py-4">{userDetails.country}</td>
                     </tr>
                 </tbody>
             </table>
