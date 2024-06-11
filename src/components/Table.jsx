@@ -23,8 +23,8 @@ const Table = ({ userDetails }) => {
                 </thead>
                 <tbody>
                     <tr className="bg-[#d1d5db] border-b text-gray-900">
-                        <td className="px-6 py-4">{userDetails.firstname}</td>
-                        <td className="px-6 py-4">{userDetails.lastname}</td>
+                        <td className="px-6 py-4">{userDetails.firstName}</td>
+                        <td className="px-6 py-4">{userDetails.lastName}</td>
                         <td className="px-6 py-4">{userDetails.age}</td>
                         <td className="px-6 py-4">{userDetails.gender}</td>
                         <td className="px-6 py-4">{userDetails.country}</td>

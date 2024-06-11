@@ -28,8 +28,8 @@ const Login = ({ userDetails, setUserDetails, initialUserDetails }) => {
                     <input
                         type="text"
                         placeholder="First name"
-                        value={userDetails.firstname}
-                        name="firstname"
+                        value={userDetails.firstName}
+                        name="firstName"
                         onChange={handleChange}
                         className="border p-2"
                     />
@@ -39,8 +39,8 @@ const Login = ({ userDetails, setUserDetails, initialUserDetails }) => {
                     <input
                         type="text"
                         placeholder="Last name"
-                        value={userDetails.lastname}
-                        name="lastname"
+                        value={userDetails.lastName}
+                        name="lastName"
                         onChange={handleChange}
                         className="border p-2"
                     />

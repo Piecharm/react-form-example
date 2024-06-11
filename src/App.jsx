@@ -7,8 +7,8 @@ import Navbar from "./components/Navbar";
 
 function App() {
     const initialUserDetails = {
-        firstname: "",
-        lastname: "",
+        firstName: "",
+        lastName: "",
         age: 0,
         gender: "",
         country: "",
