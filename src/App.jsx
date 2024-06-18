@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./components/Login";
 import Table from "./components/Table";
-import { useState } from "react";
 import Navbar from "./components/Navbar";
+import { useState } from "react";
 
 function App() {
     const initialUserDetails = {
@@ -32,7 +32,7 @@ function App() {
                 />
                 <Route
                     path="/table"
-                    element={<Table userDetails={userDetails} />}
+                    element={<Table />}
                 />
             </Routes>
         </>
