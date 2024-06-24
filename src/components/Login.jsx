@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Login = ({ userDetails, setUserDetails, initialUserDetails }) => {
+    const [error, setError] = useState(null);
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -8,9 +11,22 @@ const Login = ({ userDetails, setUserDetails, initialUserDetails }) => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(userDetails);
+        const jsonUser = JSON.stringify({ value: userDetails });
+        const response = await fetch("http://localhost:8080/users/create", {
+            method: "POST",
+            body: jsonUser,
+            headers: { "Content-Type": "application/json" },
+        });
+        const json = await response.json();
+        if (!response.ok) {
+            setError(json.error);
+        }
+        if (response.ok) {
+            setError(null);
+            console.log(json);
+        }
     };
 
     const handleReset = () => {
